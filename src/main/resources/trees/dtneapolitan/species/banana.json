@@ -1,0 +1,56 @@
+{
+  "type": "dtneapolitan:banana",
+  "family": "dtneapolitan:banana",
+  "tapering": 0.8,
+  "signal_energy": 5.0,
+  "growth_rate": 0.6,
+  "leaves_properties": "dtneapolitan:banana",
+  "environment_factors" : {
+    "cold": 0.75,
+    "dry": 0.75,
+    "hot": 1.1
+  },
+  "transformable": false,
+  "perfect_biomes": { "type": "jungle" },
+  "primitive_saplings": [
+    {
+    "sapling_item": "neapolitan:large_banana_frond",
+    "can_craft_seed_to_sapling": false
+    },
+    {
+      "sapling_item": "neapolitan:banana_frond",
+      "can_craft_seed_to_sapling": false
+    },
+    {
+      "sapling_item": "neapolitan:small_banana_frond",
+      "can_craft_seed_to_sapling": false
+    }
+  ],
+  "can_craft_seed_to_sapling": false,
+  "sapling_shape": "slim_sapling",
+  "acceptable_soils": ["dirt_like", "sand_like", "gravel_like"],
+  "features" : [
+    "dtneapolitan:banana_fruit"
+  ],
+  "drop_creators": [
+    "log",
+    {
+      "name": "normal",
+      "properties": {
+        "drops": {
+          "leaves": {
+            "id": "weighted",
+            "properties": {
+              "items": {
+                "neapolitan:large_banana_frond": 1,
+                "neapolitan:banana_frond": 1,
+                "neapolitan:small_banana_frond": 1
+              },
+              "chance": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}
