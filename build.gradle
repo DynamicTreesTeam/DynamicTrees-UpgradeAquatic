@@ -78,7 +78,7 @@ minecraft {
             }
 
             mods {
-                dtintegrateddynamics {
+                dtupgradeaquatic {
                     source sourceSets.main
                 }
             }
@@ -94,7 +94,7 @@ minecraft {
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             mods {
-                dtneopolitan {
+                dtupgradeaquatic {
                     source sourceSets.main
                 }
             }
@@ -109,10 +109,10 @@ minecraft {
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
-            args '--mod', 'dtneapolitan', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'dtupgradeaquatic', '--all', '--output', file('src/generated/resources/')
 
             mods {
-                dtneapolitan {
+                dtupgradeaquatic {
                     source sourceSets.main
                 }
             }

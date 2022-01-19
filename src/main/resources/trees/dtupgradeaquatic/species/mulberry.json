@@ -11,13 +11,31 @@
     "dry": 0.75
   },
   "perfect_biomes": { "types": [ "river", "overworld" ] },
-  "primitive_sapling": "upgrade_aquatic:river_sapling",
+  "primitive_saplings": [
+    {
+      "sapling_block": "upgrade_aquatic:river_sapling"
+    },
+    {
+      "sapling_item": "upgrade_aquatic:mulberry",
+      "can_craft_seed_to_sapling": false
+    }
+  ],
   "features" : [
     {
       "name": "fruit",
       "properties": {
         "fruit_block": "dtupgradeaquatic:mulberry_fruit",
         "fruiting_radius": 5
+      }
+    }
+  ],
+  "drop_creators": [
+    "log",
+    "stick",
+    {
+      "name": "fruit",
+      "properties":{
+        "fruit_item": "upgrade_aquatic:mulberry"
       }
     }
   ]
