@@ -1,6 +1,0 @@
-{
-  "loader": "dtneapolitan:palm_fronds",
-  "textures": {
-    "frond": "dtneapolitan:block/palm_frond"
-  }
-}
