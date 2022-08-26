@@ -7,8 +7,6 @@ import com.ferreusveritas.dynamictrees.blocks.rootyblocks.SoilProperties;
 import com.ferreusveritas.dynamictrees.init.DTConfigs;
 import com.ferreusveritas.dynamictrees.trees.Family;
 import com.ferreusveritas.dynamictrees.trees.Species;
-import com.minecraftabnormals.upgrade_aquatic.core.UAConfig;
-import com.minecraftabnormals.upgrade_aquatic.core.UpgradeAquatic;
 import com.minecraftabnormals.upgrade_aquatic.core.registry.UAFeatures;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -42,8 +40,6 @@ public class DynamicTreesUpgradeAquatic
         MinecraftForge.EVENT_BUS.register(this);
 
         RegistryHandler.setup(MOD_ID);
-
-        DTUpgradeAquaticRegistries.setup();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

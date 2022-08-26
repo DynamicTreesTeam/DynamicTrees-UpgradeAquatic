@@ -20,11 +20,14 @@
       "can_craft_seed_to_sapling": false
     }
   ],
+  "fruits": [
+    "dtupgradeaquatic:mulberry"
+  ],
   "features" : [
     {
       "name": "fruit",
       "properties": {
-        "fruit_block": "dtupgradeaquatic:mulberry_fruit",
+        "fruit": "dtupgradeaquatic:mulberry",
         "fruiting_radius": 5
       }
     }
