@@ -2,11 +2,7 @@ package maxhyper.dtupgradeaquatic;
 
 import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
-import com.ferreusveritas.dynamictrees.blocks.leaves.LeavesProperties;
-import com.ferreusveritas.dynamictrees.blocks.rootyblocks.SoilProperties;
 import com.ferreusveritas.dynamictrees.init.DTConfigs;
-import com.ferreusveritas.dynamictrees.trees.Family;
-import com.ferreusveritas.dynamictrees.trees.Species;
 import com.minecraftabnormals.upgrade_aquatic.core.registry.UAFeatures;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -27,8 +23,8 @@ import java.util.Random;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DynamicTreesUpgradeAquatic.MOD_ID)
-public class DynamicTreesUpgradeAquatic
-{
+public class DynamicTreesUpgradeAquatic {
+
     public static final String MOD_ID = "dtupgradeaquatic";
 
     public DynamicTreesUpgradeAquatic() {
@@ -67,14 +63,8 @@ public class DynamicTreesUpgradeAquatic
     }
 
     public void gatherData(final GatherDataEvent event) {
-        GatherDataHelper.gatherAllData(
-                MOD_ID,
-                event,
-                SoilProperties.REGISTRY,
-                Family.REGISTRY,
-                Species.REGISTRY,
-                LeavesProperties.REGISTRY
-        );;
+        GatherDataHelper.gatherTagData(MOD_ID, event);
+        GatherDataHelper.gatherLootData(MOD_ID, event);
     }
 
 }
