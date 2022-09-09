@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[36,37)"
 license="MIT"
 issueTrackerURL="https://github.com/DynamicTreesTeam/DynamicTrees-UpgradeAquatic/issues"
 
@@ -7,14 +7,13 @@ issueTrackerURL="https://github.com/DynamicTreesTeam/DynamicTrees-UpgradeAquatic
 modId="dtupgradeaquatic"
 version="${file.jarVersion}"
 displayName="Dynamic Trees for Upgrade Aquatic"
-
 updateJSONURL="https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/Add-ons/UpgradeAquatic.json?raw=true"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-upgrade-aquatic"
-
 authors="Max Hyper"
 description='''
 Compatibility Mod between Dynamic trees and Upgrade Aquatic
 '''
+
 [[dependencies.dtupgradeaquatic]]
     modId="forge"
     mandatory=true
