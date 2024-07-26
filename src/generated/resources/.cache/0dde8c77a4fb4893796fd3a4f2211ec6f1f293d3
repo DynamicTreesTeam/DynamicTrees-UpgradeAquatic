@@ -1,0 +1,6 @@
+// 1.19.2	2024-07-26T10:31:55.0675513	dtupgradeaquatic
+18dab855ddbf6f9fef51b03848ef6d84f6cd47fd data/dtupgradeaquatic/loot_tables/blocks/river_leaves.json
+2d6100fd6916531fc93bc638ceff38ea30e9bc86 data/dtupgradeaquatic/loot_tables/trees/branches/river.json
+284f399a46ad9e45e12035745e8b8f73b9927ae7 data/dtupgradeaquatic/loot_tables/trees/branches/stripped_river.json
+986afb00ce7ce1ff4ba0d792936eed67cb913515 data/dtupgradeaquatic/loot_tables/trees/leaves/river.json
+26216a91651b722609c18e85fb70cacfe50b4fb5 data/dtupgradeaquatic/loot_tables/trees/voluntary/mulberry.json
