@@ -1,0 +1,8 @@
+// 1.20.1	2024-07-26T01:04:36.1083546	Block States: dtupgradeaquatic
+ba58921801c4a559b65cb03bbdfc1dd93003f8f7 assets/dtupgradeaquatic/blockstates/mulberry_sapling.json
+dba950541a34c33ae9d46e10f9e0f704d05d2201 assets/dtupgradeaquatic/blockstates/river_branch.json
+6bb37f36036c1aafd42a73a71ba66910e6ef3710 assets/dtupgradeaquatic/blockstates/river_leaves.json
+5ac05adebef031dc5b6d94d2edb57a9936f8a467 assets/dtupgradeaquatic/blockstates/stripped_river_branch.json
+39dde427bc684b8183fc58116e5af7b0481dd976 assets/dtupgradeaquatic/models/block/river_branch.json
+d6d3b35b1d1d264f532026ad905e3422f65af7b1 assets/dtupgradeaquatic/models/block/saplings/mulberry.json
+1cc87ec6ddd1d8b10a3d8ed5671f3941d87f1e90 assets/dtupgradeaquatic/models/block/stripped_river_branch.json

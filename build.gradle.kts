@@ -82,13 +82,13 @@ dependencies {
     minecraft("net.minecraftforge:forge:${mcVersion}-${property("forgeVersion")}")
 
     implementation(fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-$mcVersion:${property("dynamicTreesVersion")}"))
-    implementation(fg.deobf("curse.maven:blueprint-382216:4749000"))
-    implementation(fg.deobf("curse.maven:upgrade-aquatic-326895:4777515"))
+    implementation(fg.deobf("curse.maven:blueprint-382216:5292242"))
+    implementation(fg.deobf("curse.maven:upgrade-aquatic-326895:5296565"))
 
-    runtimeOnly(fg.deobf("curse.maven:jade-324717:4433884"))
-    runtimeOnly(fg.deobf("curse.maven:jei-238222:4615177"))
-    runtimeOnly(fg.deobf("org.squiddev:cc-tweaked-$mcVersion:${property("ccVersion")}"))
-    runtimeOnly(fg.deobf("com.harleyoconnor.suggestionproviderfix:SuggestionProviderFix-1.19:${property("suggestionProviderFixVersion")}"))
+    runtimeOnly(fg.deobf("curse.maven:jade-324717:5072729"))
+    runtimeOnly(fg.deobf("curse.maven:jei-238222:5101366"))
+    runtimeOnly(fg.deobf("curse.maven:cc-tweaked-282001:5118388"))
+    runtimeOnly(fg.deobf("curse.maven:suggestion-provider-fix-469647:4591193"))
     runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:${property("patchouliVersion")}"))
 }
 
@@ -139,8 +139,7 @@ curseforge {
         mainArtifact(tasks.findByName("jar")) {
             relations {
                 requiredDependency("dynamictrees")
-                requiredDependency("ars-nouveau")
-                optionalDependency("ars-elemental")
+                requiredDependency("upgrade-aquatic")
             }
         }
     }

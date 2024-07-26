@@ -2,18 +2,16 @@ package maxhyper.dtupgradeaquatic;
 
 import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
-import com.ferreusveritas.dynamictrees.init.DTConfigs;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraftforge.common.MinecraftForge;
+import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
+import com.ferreusveritas.dynamictrees.systems.fruit.Fruit;
+import com.ferreusveritas.dynamictrees.tree.family.Family;
+import com.ferreusveritas.dynamictrees.tree.species.Species;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
-import javax.annotation.Nonnull;
-import java.util.Random;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DynamicTreesUpgradeAquatic.MOD_ID)
@@ -27,8 +25,6 @@ public class DynamicTreesUpgradeAquatic {
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::gatherData);
 
-        MinecraftForge.EVENT_BUS.register(this);
-
         RegistryHandler.setup(MOD_ID);
     }
 
@@ -36,24 +32,16 @@ public class DynamicTreesUpgradeAquatic {
 
     }
 
-//    //disgusting code, do not look or risk retinal damage.
-//    @SuppressWarnings("unchecked")
-//    private void clearConfiguredFeature (ConfiguredFeature<?,?> configuredFeature){
-//        Feature<NoFeatureConfig> nullFeature = new Feature<NoFeatureConfig>(NoFeatureConfig.CODEC){
-//            @Override public boolean place(@Nonnull ISeedReader p_241855_1_, @Nonnull ChunkGenerator p_241855_2_, @Nonnull Random p_241855_3_, @Nonnull BlockPos p_241855_4_, @Nonnull  NoFeatureConfig p_241855_5_) { return false; }
-//        };
-//        ConfiguredFeature<NoFeatureConfig,Feature<NoFeatureConfig>> castedConfigured = (ConfiguredFeature<NoFeatureConfig,Feature<NoFeatureConfig>>)configuredFeature;
-//        castedConfigured.feature = nullFeature;
-//        castedConfigured.config = NoFeatureConfig.INSTANCE;
-//    }
-
     private void clientSetup(final FMLClientSetupEvent event) {
-        // do something that can only be done on the client
+
     }
 
     public void gatherData(final GatherDataEvent event) {
-        GatherDataHelper.gatherTagData(MOD_ID, event);
-        GatherDataHelper.gatherLootData(MOD_ID, event);
+        GatherDataHelper.gatherAllData(MOD_ID, event,
+                Family.REGISTRY,
+                Fruit.REGISTRY,
+                LeavesProperties.REGISTRY,
+                Species.REGISTRY);
     }
 
 }

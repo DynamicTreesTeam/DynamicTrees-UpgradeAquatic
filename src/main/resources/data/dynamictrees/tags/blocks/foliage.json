@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "upgrade_aquatic:beachgrass",
+    "upgrade_aquatic:tall_beachgrass",
+    "upgrade_aquatic:pickerelweed",
+    "upgrade_aquatic:tall_pickerelweed"
+  ]
+}

@@ -31,5 +31,8 @@
         "fruiting_radius": 5
       }
     }
-  ]
+  ],
+  "lang_overrides": {
+    "seed": "Mulberry Seeds"
+  }
 }
