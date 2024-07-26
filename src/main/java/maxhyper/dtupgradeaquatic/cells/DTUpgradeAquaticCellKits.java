@@ -1,20 +1,20 @@
 package maxhyper.dtupgradeaquatic.cells;
 
-import com.ferreusveritas.dynamictrees.api.cells.Cell;
-import com.ferreusveritas.dynamictrees.api.cells.CellKit;
-import com.ferreusveritas.dynamictrees.api.cells.CellNull;
-import com.ferreusveritas.dynamictrees.api.cells.CellSolver;
+import com.ferreusveritas.dynamictrees.api.cell.Cell;
+import com.ferreusveritas.dynamictrees.api.cell.CellKit;
+import com.ferreusveritas.dynamictrees.api.cell.CellNull;
+import com.ferreusveritas.dynamictrees.api.cell.CellSolver;
 import com.ferreusveritas.dynamictrees.api.registry.Registry;
-import com.ferreusveritas.dynamictrees.cells.*;
+import com.ferreusveritas.dynamictrees.cell.CellKits;
 import com.ferreusveritas.dynamictrees.util.SimpleVoxmap;
 import maxhyper.dtupgradeaquatic.DynamicTreesUpgradeAquatic;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 
 public class DTUpgradeAquaticCellKits {
 
-    public static void register(final Registry<CellKit> registry) {
+    public static void register(Registry<CellKit> registry) {
         registry.registerAll(RIVER);
     }
 
@@ -24,12 +24,12 @@ public class DTUpgradeAquaticCellKits {
             @Override
             public int getValue() { return 3; }
 
-            final int[] map = {3, 5, 3, 3, 3, 3};
-
             @Override
-            public int getValueFromSide(Direction side) {
-                return map[side.ordinal()];
+            public int getValueFromSide(Direction direction) {
+                return map[direction.ordinal()];
             }
+
+            final int[] map = {3, 5, 3, 3, 3, 3};
         };
 
         private final Cell[] riverLeafCells = {

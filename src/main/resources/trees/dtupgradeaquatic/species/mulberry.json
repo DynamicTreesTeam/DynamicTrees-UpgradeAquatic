@@ -10,7 +10,7 @@
     "cold": 0.8,
     "dry": 0.75
   },
-  "perfect_biomes": { "types": [ "river", "overworld" ] },
+  "perfect_biomes": { "tags": [ "#minecraft:is_river", "#minecraft:is_overworld" ] },
   "primitive_saplings": [
     {
       "sapling_block": "upgrade_aquatic:river_sapling"

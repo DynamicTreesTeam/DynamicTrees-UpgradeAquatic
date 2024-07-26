@@ -1,6 +1,6 @@
 package maxhyper.dtupgradeaquatic.cells;
 
-import com.ferreusveritas.dynamictrees.cells.MatrixCell;
+import com.ferreusveritas.dynamictrees.cell.MatrixCell;
 
 public class RiverLeafCell extends MatrixCell {
 

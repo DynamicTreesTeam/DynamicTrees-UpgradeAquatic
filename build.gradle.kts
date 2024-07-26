@@ -67,7 +67,8 @@ minecraft {
                 "--all",
                 "--output", file("src/generated/resources/"),
                 "--existing", file("src/main/resources"),
-                "--existing-mod", "dynamictrees"
+                "--existing-mod", "dynamictrees",
+                "--existing-mod", "upgrade_aquatic"
             )
         }
     }
@@ -81,15 +82,14 @@ dependencies {
     minecraft("net.minecraftforge:forge:${mcVersion}-${property("forgeVersion")}")
 
     implementation(fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-$mcVersion:${property("dynamicTreesVersion")}"))
-    implementation(fg.deobf("curse.maven:abnormals-core-382216:3607198")) // Note: now called Blueprint in newer versions
-    implementation(fg.deobf("curse.maven:upgrade-aquatic-326895:3561148"))
+    implementation(fg.deobf("curse.maven:blueprint-382216:4749000"))
+    implementation(fg.deobf("curse.maven:upgrade-aquatic-326895:4777515"))
 
-    runtimeOnly(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
-    runtimeOnly(fg.deobf("curse.maven:hwyla-253449:3033593"))
-    runtimeOnly(fg.deobf("mezz.jei:jei-$mcVersion:${property("jeiVersion")}"))
-    runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:${property("patchouliVersion")}"))
+    runtimeOnly(fg.deobf("curse.maven:jade-324717:4433884"))
+    runtimeOnly(fg.deobf("curse.maven:jei-238222:4615177"))
     runtimeOnly(fg.deobf("org.squiddev:cc-tweaked-$mcVersion:${property("ccVersion")}"))
-    runtimeOnly(fg.deobf("com.harleyoconnor.suggestionproviderfix:SuggestionProviderFix:$mcVersion-${property("suggestionProviderFixVersion")}"))
+    runtimeOnly(fg.deobf("com.harleyoconnor.suggestionproviderfix:SuggestionProviderFix-1.19:${property("suggestionProviderFixVersion")}"))
+    runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:${property("patchouliVersion")}"))
 }
 
 tasks.jar {
@@ -109,39 +109,40 @@ tasks.jar {
 
 java {
     withSourcesJar()
-
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
 
+val changelogFile = file("build/changelog.txt")
+
 curseforge {
-    if (project.hasProperty("curseApiKey") && project.hasProperty("curseFileType")) {
-        apiKey = property("curseApiKey")
+    if (!project.hasProperty("curseApiKey")) {
+        project.logger.warn("API Key for CurseForge not detected; uploading will be disabled.")
+        return@curseforge
+    }
 
-        project {
-            id = "570119"
+    apiKey = property("curseApiKey")
 
-            addGameVersion(mcVersion)
+    project {
+        id = "570119"
 
-            changelog = "Changelog will be added shortly..."
-            changelogType = "markdown"
-            releaseType = property("curseFileType")
+        addGameVersion(mcVersion)
 
-            addArtifact(tasks.findByName("sourcesJar"))
+        changelog = changelogFile
+        changelogType = "markdown"
+        releaseType = property("curseFileType")
 
-            mainArtifact(tasks.findByName("jar")) {
-                relations {
-                    requiredDependency("dynamictrees")
-                    requiredDependency("upgrade-aquatic")
-                    optionalDependency("dynamictreesplus")
-                    optionalDependency("chunk-saving-fix")
-                }
+        addArtifact(tasks.findByName("sourcesJar"))
+
+        mainArtifact(tasks.findByName("jar")) {
+            relations {
+                requiredDependency("dynamictrees")
+                requiredDependency("ars-nouveau")
+                optionalDependency("ars-elemental")
             }
         }
-    } else {
-        project.logger.log(LogLevel.WARN, "API Key and file type for CurseForge not detected; uploading will be disabled.")
     }
 }
 

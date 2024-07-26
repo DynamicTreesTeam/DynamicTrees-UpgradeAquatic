@@ -1,6 +1,6 @@
 package maxhyper.dtupgradeaquatic;
 
-import com.ferreusveritas.dynamictrees.api.cells.CellKit;
+import com.ferreusveritas.dynamictrees.api.cell.CellKit;
 import maxhyper.dtupgradeaquatic.cells.DTUpgradeAquaticCellKits;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

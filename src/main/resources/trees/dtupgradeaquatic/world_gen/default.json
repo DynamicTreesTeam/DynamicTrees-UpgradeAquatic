@@ -1,16 +1,17 @@
 [
   {
     "_comment": "Generation for rivers. Has decent spawns of mulberry trees",
-    "select": { "types" : [ "river", "!snowy" ] },
+    "select": { "tags" : [ "#minecraft:is_river", "#minecraft:is_overworld", "!#forge:is_snowy" ] },
     "apply": {
       "species" : {
         "method" : "splice_before",
         "random" : {
           "dtupgradeaquatic:mulberry" : 1,
-          "..." : 5
+          "..." : 30
         }
       },
-      "chance": 0.1
+      "density": [ 1 ],
+      "chance": 1
     }
   }
 ]
