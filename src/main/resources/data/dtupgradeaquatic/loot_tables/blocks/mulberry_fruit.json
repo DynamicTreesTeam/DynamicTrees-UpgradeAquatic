@@ -2,14 +2,14 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "dtupgradeaquatic:mulberry_fruit",
               "condition": "minecraft:block_state_property",
+              "block": "dtupgradeaquatic:mulberry_fruit",
               "properties": {
                 "age": "3"
               }
@@ -17,13 +17,12 @@
           ],
           "functions": [
             {
-              "add": false,
+              "function": "minecraft:set_count",
               "count": {
-                "type": "minecraft:uniform",
+                "min": 1.0,
                 "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
+                "type": "minecraft:uniform"
+              }
             },
             {
               "function": "minecraft:explosion_decay"
@@ -31,9 +30,7 @@
           ],
           "name": "upgrade_aquatic:mulberry"
         }
-      ],
-      "rolls": 1.0
+      ]
     }
-  ],
-  "random_sequence": "dtupgradeaquatic:blocks/mulberry_fruit"
+  ]
 }

@@ -1,8 +1,8 @@
 {
-  "type": "minecraft:block",
+  "type": "dynamictrees:branches",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
@@ -16,11 +16,10 @@
           ],
           "name": "upgrade_aquatic:river_log"
         }
-      ],
-      "rolls": 1.0
+      ]
     },
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
@@ -34,9 +33,7 @@
           ],
           "name": "minecraft:stick"
         }
-      ],
-      "rolls": 1.0
+      ]
     }
-  ],
-  "random_sequence": "dtupgradeaquatic:trees/branches/river"
+  ]
 }
